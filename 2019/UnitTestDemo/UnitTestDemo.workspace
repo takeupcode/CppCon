@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="UnitTestDemo" Database="" Version="10.0.0">
-  <Project Name="Split" Path="Split/Split.project" Active="Yes"/>
+  <Project Name="Split" Path="Split/Split.project" Active="No"/>
+  <Project Name="SplitTests" Path="SplitTests/SplitTests.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="Split" ConfigName="Debug"/>
+      <Project Name="SplitTests" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="Split" ConfigName="Release"/>
+      <Project Name="SplitTests" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
