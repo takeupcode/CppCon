@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Wahid
-Date                   :=18/09/19
+Date                   :=19/09/19
 CodeLitePath           :=/home/wahid/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(ObjectSuffix) $(IntermediateDirectory)/up_Split_StringUtil.cpp$(ObjectSuffix) 
 
 
 
@@ -98,6 +98,22 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+
+$(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(ObjectSuffix): ../Split/StringUtilScenarios.cpp $(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/wahid/Storage/GitHub/CppCon/2019/UnitTestDemo/Split/StringUtilScenarios.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(DependSuffix): ../Split/StringUtilScenarios.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(DependSuffix) -MM ../Split/StringUtilScenarios.cpp
+
+$(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(PreprocessSuffix): ../Split/StringUtilScenarios.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_Split_StringUtilScenarios.cpp$(PreprocessSuffix) ../Split/StringUtilScenarios.cpp
+
+$(IntermediateDirectory)/up_Split_StringUtil.cpp$(ObjectSuffix): ../Split/StringUtil.cpp $(IntermediateDirectory)/up_Split_StringUtil.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/wahid/Storage/GitHub/CppCon/2019/UnitTestDemo/Split/StringUtil.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_Split_StringUtil.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/up_Split_StringUtil.cpp$(DependSuffix): ../Split/StringUtil.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_Split_StringUtil.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/up_Split_StringUtil.cpp$(DependSuffix) -MM ../Split/StringUtil.cpp
+
+$(IntermediateDirectory)/up_Split_StringUtil.cpp$(PreprocessSuffix): ../Split/StringUtil.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_Split_StringUtil.cpp$(PreprocessSuffix) ../Split/StringUtil.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
